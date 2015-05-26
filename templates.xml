@@ -60,6 +60,10 @@ class ArrayComp implements Comparator&lt;int[]&gt;{
 		}
 		return 0;
 	}
+}</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="arrcp">public static ${type}[] cp(${type}[] a){
+	${type}[] b = new ${type}[a.length];
+	for(int i = 0; i &lt; a.length; i++) b[i] = a[i];
+	return b;
 }</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="br">BufferedReader br = new BufferedReader(new InputStreamReader(System.in));</template><template autoinsert="false" context="swt-statements" deleted="false" description="new Browser" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.swt.browser" name="Browser">${browserType:newType(org.eclipse.swt.browser.Browser)} ${browser:newName(org.eclipse.swt.browser.Browser)}= new ${browserType}(${parent:var(org.eclipse.swt.widgets.Composite)}, ${style:link(SWT.NONE, SWT.MOZILLA)});
 ${browser}.setLayoutData(new ${gridDataType:newType(org.eclipse.swt.layout.GridData)}(SWT.${horizontal:link(FILL, BEGINNING, CENTER, END)}, SWT.${vertical:link(FILL, TOP, CENTER, BOTTOM)}, ${hex:link(true, false)}, ${vex:link(true, false)}));
 ${browser}.setUrl(${word_selection}${});
@@ -150,7 +154,9 @@ static int gcd(int a, int b){
 	} else { 
 		return (gcd(b, a % b));
 	}
-}</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="graph">class Node extends ArrayList&lt;Edge&gt;{
+}</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="graph">// public static Graph g;
+
+class Node extends ArrayList&lt;Edge&gt;{
 	int index, depth = -1, dist = -1;
 	Node(int index){this.index = index;}
 	Node parent;
@@ -442,7 +448,7 @@ class Prime{
 		}
 		return true;
 	}
-}</template><template autoinsert="false" context="java-members" deleted="false" description="private method" enabled="true" id="org.eclipse.jdt.ui.templates.private_method" name="private_method">private ${return_type} ${name}(${}) {
+}</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="print">System.out.print(${word_selection}${});${cursor}</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="println">System.out.println(${word_selection}${});${cursor}</template><template autoinsert="false" context="java-members" deleted="false" description="private method" enabled="true" id="org.eclipse.jdt.ui.templates.private_method" name="private_method">private ${return_type} ${name}(${}) {
 	${cursor}
 }</template><template autoinsert="false" context="java-members" deleted="false" description="private static method" enabled="true" id="org.eclipse.jdt.ui.templates.private_static_method" name="private_static_method">private static ${return_type} ${name}(${}) {
 	${cursor}
@@ -457,7 +463,7 @@ class Prime{
 	public static int randomInt(int min, int max){
 		return min + rand.nextInt(max - min + 1);
 	}
-}</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="regex">class Regex{
+}</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="readsplit">br.readLine().split(" ");</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="regex">class Regex{
 	Pattern p; Matcher m; String str;
 	Regex(String regex_str){p = Pattern.compile(regex_str);}
 	void setStr(String str){m = p.matcher(str);}
@@ -500,7 +506,7 @@ ${imp:import(org.eclipse.swt.SWT)}${cursor}</template><template autoinsert="true
 	return i*i;
 }
 
-public static int sq(double d){
+public static double sq(double d){
 	return d*d;
 }</template><template autoinsert="false" context="java-members" deleted="false" description="static final field" enabled="true" id="org.eclipse.jdt.ui.templates.static_final" name="static_final">${visibility:link('public ','protected ','','private ')}static final ${type:link(String,int)} ${NAME} = ${expr:link('""',0)};</template><template autoinsert="false" context="swt-statements" deleted="false" description="new StyledText " enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.swt.styledtext" name="StyledText">${type:newType(org.eclipse.swt.custom.StyledText)} ${text:newName(org.eclipse.swt.custom.StyledText)}= new ${type}(${parent:var(org.eclipse.swt.widgets.Composite)}, ${style:link('SWT.V_SCROLL | SWT.H_SCROLL', 'SWT.V_SCROLL | SWT.H_SCROLL | SWT.READ_ONLY', 'SWT.WRAP | SWT.V_SCROLL', SWT.NONE, SWT.BORDER, SWT.FULL_SELECTION)});
 ${text}.setLayoutData(new ${gridDataType:newType(org.eclipse.swt.layout.GridData)}(SWT.${horizontal:link(FILL, BEGINNING, CENTER, END)}, SWT.${vertical:link(FILL, TOP, CENTER, BOTTOM)}, ${hex:link(true, false)}, ${vex:link(true, false)}));
@@ -556,7 +562,7 @@ public void ${testName}() throws Exception {
 }</template><template autoinsert="false" context="swt-statements" deleted="false" description="new Text" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.swt.text" name="Text">${type:newType(org.eclipse.swt.widgets.Text)} ${text:newName(org.eclipse.swt.widgets.Text)}= new ${type}(${parent:var(org.eclipse.swt.widgets.Composite)}, ${style:link('SWT.SINGLE | SWT.LEAD | SWT.BORDER', 'SWT.SINGLE | SWT.LEAD | SWT.READ_ONLY | SWT.BORDER', 'SWT.SINGLE | SWT.LEAD | SWT.PASSWORD | SWT.BORDER', 'SWT.MULTI | SWT.WRAP | SWT.V_SCROLL | SWT.BORDER', 'SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER')});
 ${text}.setLayoutData(new ${gridDataType:newType(org.eclipse.swt.layout.GridData)}(SWT.${horizontal:link(FILL, BEGINNING, CENTER, END)}, SWT.${vertical:link(CENTER, TOP, BOTTOM, FILL)}, ${hex:link(true, false)}, ${vex:link(false, true)}));
 ${text}.setText(${word_selection}${});
-${imp:import(org.eclipse.swt.SWT)}${cursor}</template><template autoinsert="false" context="java" deleted="false" description="convert collection to array" enabled="true" id="org.eclipse.jdt.ui.templates.toarray" name="toarray">(${type:elemType(collection)}[]) ${collection}.toArray(new ${type}[${collection}.size()])</template><template autoinsert="true" context="java" deleted="false" description="charを小文字に変える" enabled="true" name="tolower">/**
+${imp:import(org.eclipse.swt.SWT)}${cursor}</template><template autoinsert="false" context="java" deleted="false" description="convert collection to array" enabled="true" id="org.eclipse.jdt.ui.templates.toarray" name="toarray">(${type:elemType(collection)}[]) ${collection}.toArray(new ${type}[${collection}.size()])</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="toint">Integer.parseInt(${str});${cursor}</template><template autoinsert="true" context="java" deleted="false" description="charを小文字に変える" enabled="true" name="tolower">/**
  * charを小文字に変える
  */
 public static char toLower(char c){

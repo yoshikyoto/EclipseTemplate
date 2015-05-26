@@ -26,6 +26,16 @@ EclipseのPrefrences > Java > Templates
 Arrays.sort(arr, new ArrayComp())
 ```
 
+### arrcp
+配列のコピーを作成する。Arrays.copyOfがあるので一考の余地あり。
+```java
+public static ${type}[] cp(${type}[] a){
+${type}[] b = new ${type}[a.length];
+for(int i = 0; i < a.length; i++) b[i] = a[i];
+return b;
+}
+```
+
 ### br
 標準入力のBufferedReader
 
@@ -70,8 +80,17 @@ DPのCombination (int)
 ### prime
 素数を数え上げたりするために使うクラス
 
+### print
+`System.out.print(${word_selection}${});${cursor}`
+
+### println
+`System.out.println(${word_selection}${});${cursor}`
+
 ### rand
 自作ランダムクラス
+
+### readsplit
+`br.readLine().split(" ");`
 
 ### regex
 patternのmatcherをひっくるめた自作正規表現クラス
@@ -90,6 +109,9 @@ int と double の2乗の関数
 
 ### swap
 配列のi番目とj番目の値を入れ替える関数
+
+### toint
+`Integer.parseInt(${str});${cursor}`
 
 ### tolower
 charを小文字に変える関数
